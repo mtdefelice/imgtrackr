@@ -1,0 +1,22 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+libraries:
+- name: ssl
+  version: latest
+
+handlers:
+- url: /.*
+  script: main.app
+  secure: always
+- url: /img
+  static_dir: img
+  secure: always
+  application_readable: true
+
+skip_files:
+- ^.git$
+- ^.gitignore$
+- ^env$
+- ^(.*/)?.*\.py[cod]$
