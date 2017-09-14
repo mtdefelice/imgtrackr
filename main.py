@@ -15,6 +15,7 @@ def collect ():
 		'tid': _TID,
 		'cid': request.headers.environ.get ('REMOTE_ADDR', ''),
 		'uip': request.headers.environ.get ('REMOTE_ADDR', ''),
+		'dr': request.referrer,
 		'cn': request.args.get ('cn', ''),
 		'cs': request.args.get ('cs', ''),
 		'cm': request.args.get ('cm', ''),
