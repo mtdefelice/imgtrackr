@@ -1,4 +1,4 @@
-from flask import Flask, request, abort, send_from_directory
+from flask import Flask, request, send_from_directory
 import requests
 
 app = Flask (__name__)
@@ -21,11 +21,6 @@ def collect ():
 	}
 
 	p = requests.post ('https://www.google-analytics.com/collect', data = d)
-
-
-@app.route ('/')
-def index ():
-	abort (501)
 
 @app.route ('/<path:p>')
 def img (p):
